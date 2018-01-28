@@ -15,18 +15,18 @@
 		var clockRadius = canvas.width / 2;
 		
 		context.beginPath();
-		context.fillStyle = "black";
+		context.fillStyle = "blue";
 		context.arc(clockRadius, clockRadius, clockRadius, 0, 2*Math.PI);
 		context.fill();
 		
-		context.fillStyle = "white";
+		context.fillStyle = "orange";
 		
 		context.beginPath();
 		context.arc(clockRadius, clockRadius, 3, 0, 2 * Math.PI);
 		context.fill();
 		
 		context.font = clockRadius / 10 + "px arial";
-		context.fillStyle = "white";
+		context.fillStyle = "orange";
 		context.textAlign = "center";
 		context.textBaseline = "middle";
 		
@@ -36,7 +36,6 @@
 						clockRadius - (clockRadius * 0.9 * Math.cos(i * 2 * Math.PI / 12)));	
 		}
 		
-		var date = new Date();
 		var hours = new Date().getHours();
 		var minutes = new Date().getMinutes();
 		var seconds = new Date().getSeconds();
@@ -46,7 +45,7 @@
 		var minutesAngle = minutes * 2 * Math.PI / 60;
 		var secondsAngle = seconds * 2 * Math.PI / 60;
 		
-		context.strokeStyle = "white";
+		context.strokeStyle = "orange";
 		context.moveTo(clockRadius, clockRadius);
 		context.lineTo(clockRadius + clockRadius * 0.4 * Math.sin(hoursAngle), 
 				clockRadius - (clockRadius * 0.4 * Math.cos(hoursAngle)));	
