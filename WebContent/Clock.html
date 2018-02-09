@@ -19,14 +19,14 @@
 		context.arc(clockRadius, clockRadius, clockRadius, 0, 2*Math.PI);
 		context.fill();
 		
-		context.fillStyle = "orange";
+		context.fillStyle = "yellow";
 		
 		context.beginPath();
 		context.arc(clockRadius, clockRadius, 3, 0, 2 * Math.PI);
 		context.fill();
 		
 		context.font = clockRadius / 10 + "px arial";
-		context.fillStyle = "orange";
+		context.fillStyle = "yellow";
 		context.textAlign = "center";
 		context.textBaseline = "middle";
 		
@@ -36,16 +36,17 @@
 						clockRadius - (clockRadius * 0.9 * Math.cos(i * 2 * Math.PI / 12)));	
 		}
 		
-		var hours = new Date().getHours();
-		var minutes = new Date().getMinutes();
-		var seconds = new Date().getSeconds();
+		var date = new Date();
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
 		var fullHours = hours % 12 + minutes / 60 + seconds / 3600;
 		
 		var hoursAngle = fullHours * 2 * Math.PI / 12;
 		var minutesAngle = minutes * 2 * Math.PI / 60;
 		var secondsAngle = seconds * 2 * Math.PI / 60;
 		
-		context.strokeStyle = "orange";
+		context.strokeStyle = "yellow";
 		context.moveTo(clockRadius, clockRadius);
 		context.lineTo(clockRadius + clockRadius * 0.4 * Math.sin(hoursAngle), 
 				clockRadius - (clockRadius * 0.4 * Math.cos(hoursAngle)));	
